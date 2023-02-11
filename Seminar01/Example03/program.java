@@ -2,16 +2,16 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class App6 {
+public class program {
 
   private static Random random = new Random();
   private static Scanner input = new Scanner(System.in);
 
   public static void main(String[] args) {
 
-    // РґР°РЅ РјР°СЃСЃРёРІ С‡РёСЃРµР», РЅСѓР¶РЅРѕ СЃС„РѕСЂРјРёСЂРѕРІР°С‚СЊ РЅРѕРІСѓСЋ РІС‹Р±РѕСЂРєСѓ
-    // РёР· С‚РѕР»СЊРєРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»
-    int len = getNumberByUser("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ ");
+    // дан массив чисел, нужно сформировать новую выборку
+    // из только четных чисел
+    int len = getNumberByUser("Введите количество элементов ");
     int[] items = createArray(len);
     fillArray(items, 0, 10);
     print2(items);
@@ -24,7 +24,7 @@ public class App6 {
   }
 
   // #region
-  // 2.0 Р’РІРѕРґ С‡РёСЃР»Р°
+  // 2.0 Ввод числа
   public static int[] createArray(int size) {
     return new int[size];
   }
@@ -34,7 +34,7 @@ public class App6 {
     return input.nextInt();
   }
 
-  // 2.2 Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°
+  // 2.2 Заполнение массива
   public static void fillArray(int[] col, int min, int max) {
     int count = col.length;
     int index = 0;
@@ -44,7 +44,7 @@ public class App6 {
     }
   }
 
-  // 2.4 РџРµС‡Р°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+  // 2.4 Печать результата
   public static String print(int[] data) {
     String output = "";
     int count = data.length;
@@ -57,7 +57,7 @@ public class App6 {
     return output;
   }
 
-  // 2.4 РџРµС‡Р°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+  // 2.4 Печать результата
   public static void print2(int[] data) {
     int count = data.length;
 
@@ -69,7 +69,7 @@ public class App6 {
 
   }
 
-  // 2.3 РџРѕР»СѓС‡РµРЅРёРµ С‚РѕР»СЊРєРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»
+  // 2.3 Получение только четных чисел
   public static int[] getEvenItems(int[] rawData, int countEvenElements) {
     int count = rawData.length;
     int[] evenItems = createArray(countEvenElements);
@@ -85,7 +85,7 @@ public class App6 {
     return evenItems;
   }
 
-  // 2.5 РџРѕР»СѓС‡РµРЅРёРµ РєРѕР»-РІР° С‡РµС‚РЅС‹С… С‡РёСЃРµР»
+  // 2.5 Получение кол-ва четных чисел
   static int getCountEvenItems(int[] array) {
     int length = array.length;
     int count = 0;
@@ -98,28 +98,28 @@ public class App6 {
   // #endregion
 }
 
-// РґР°РЅ РјР°СЃСЃРёРІ С‡РёСЃРµР», РЅСѓР¶РЅРѕ СЃС„РѕСЂРјРёСЂРѕРІР°С‚СЊ РЅРѕРІСѓСЋ РІС‹Р±РѕСЂРєСѓ РёР· С‚РѕР»СЊРєРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»
-// 1. РЈС‚РѕС‡РЅСЏС‚СЊ РўР—
-// 2. Р”РµРєРѕРјРїРѕР·РёС†РёСЏ
+// дан массив чисел, нужно сформировать новую выборку из только четных чисел
+// 1. Уточнять ТЗ
+// 2. Декомпозиция
 
-// 2.0 Р’РІРѕРґ С‡РёСЃР»Р°
+// 2.0 Ввод числа
 // int <- String
-// 2.1 РЎРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР°
+// 2.1 Создание массива
 // int[] <- int
-// 2.2 Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°
+// 2.2 Заполнение массива
 // void <- int[], min, max
-// 2.4 РџРµС‡Р°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+// 2.4 Печать результата
 // void <- int[]
 // string <- int[]
 
-// 2.3 РџРѕР»СѓС‡РµРЅРёРµ С‚РѕР»СЊРєРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»
+// 2.3 Получение только четных чисел
 // int[] <- int[], count
-// 2.5 РџРѕР»СѓС‡РµРЅРёРµ РєРѕР»-РІР° С‡РµС‚РЅС‹С… С‡РёСЃРµР»
+// 2.5 Получение кол-ва четных чисел
 // int <- int[]
 
-// 3. РђР»РіРѕСЂРёС‚Рј
-// 4. РљРѕРґ
-// 5. РўРµСЃС‚С‹
+// 3. Алгоритм
+// 4. Код
+// 5. Тесты
 
 class MyList {
   int[] data = new int[0];
