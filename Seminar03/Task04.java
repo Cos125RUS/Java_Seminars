@@ -4,29 +4,39 @@ public class Task04 {
     public static void main(String[] args) {
         ArrayList<Integer> nums = new ArrayList<>();
         int a = 2;
-        int b = 201;
+        int b = 1111;
         int c = 2;
         int d = 1;
 //        var s1 = System.currentTimeMillis();
 //        System.out.println("res collection = " + collection(a, b, c, d, nums));
 //        System.out.println("time collection = " + (System.currentTimeMillis() - s1));
-        var s2 = System.currentTimeMillis();
-        System.out.println("res recursion = " + recursion(a, b, c, d));
-        System.out.println("time recursion = " + (System.currentTimeMillis() - s2));
+//        var s2 = System.currentTimeMillis();
+//        System.out.println("res recursion = " + recursion(a, b, c, d));
+//        System.out.println("time recursion = " + (System.currentTimeMillis() - s2));
 //        var s3 = System.currentTimeMillis();
 //        System.out.println("res array = " + array(a, b, c, d));
 //        System.out.println("time array = " + (System.currentTimeMillis() - s3));
 //        var s4 = System.currentTimeMillis();
 //        System.out.println("res mat = " + mat(a, b, c, d));
 //        System.out.println("time mat = " + (System.currentTimeMillis() - s4));
-        var s5 = System.currentTimeMillis();
-        System.out.println("res backArray = " + backArray(a, b, c, d));
-        System.out.println("time backArray = " + (System.currentTimeMillis() - s5));
-        var s6 = System.currentTimeMillis();
-        System.out.println("res backCollection = " + backCollection(a, b, c, d, nums));
-        System.out.println("time backCollection = " + (System.currentTimeMillis() - s6));
+//        var s5 = System.currentTimeMillis();
+//        System.out.println("res backArray = " + backArray(a, b, c, d));
+//        System.out.println("time backArray = " + (System.currentTimeMillis() - s5));
+//        var s6 = System.currentTimeMillis();
+//        System.out.println("res backCollection = " + backCollection(a, b, c, d, nums));
+//        System.out.println("time backCollection = " + (System.currentTimeMillis() - s6));
+        var s7 = System.currentTimeMillis();
+        System.out.println("res magic = " + magic(a, b, c, d));
+        System.out.println("time magic = " + (System.currentTimeMillis() - s7));
     }
 
+    static int magic(int a,int b, int c, int d){
+        int[] arr = new int[b+1];
+        arr[a] = 1;
+        for (int i = a+d; i <= b; i++)
+            arr[i] = i%2==0 ? arr[i-d] + arr[i/c] : arr[i-d];
+        return arr[b];
+    }
 
     static int backCollection(int a,int b, int c, int d, ArrayList<Integer> nums) {
         nums.add(b);
