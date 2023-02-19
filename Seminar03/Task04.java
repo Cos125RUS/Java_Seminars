@@ -4,7 +4,7 @@ public class Task04 {
     public static void main(String[] args) {
         ArrayList<Integer> nums = new ArrayList<>();
         int a = 2;
-        int b = 1111;
+        int b = 5111;
         int c = 2;
         int d = 1;
 //        var s1 = System.currentTimeMillis();
